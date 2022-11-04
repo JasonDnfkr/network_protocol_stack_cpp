@@ -196,6 +196,54 @@ src/app/port_pcap.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/app/port_pcap.cpp.s
 .PHONY : src/app/port_pcap.cpp.s
 
+src/app/xserver_datetime.obj: src/app/xserver_datetime.cpp.obj
+.PHONY : src/app/xserver_datetime.obj
+
+# target to build an object file
+src/app/xserver_datetime.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/app/xserver_datetime.cpp.obj
+.PHONY : src/app/xserver_datetime.cpp.obj
+
+src/app/xserver_datetime.i: src/app/xserver_datetime.cpp.i
+.PHONY : src/app/xserver_datetime.i
+
+# target to preprocess a source file
+src/app/xserver_datetime.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/app/xserver_datetime.cpp.i
+.PHONY : src/app/xserver_datetime.cpp.i
+
+src/app/xserver_datetime.s: src/app/xserver_datetime.cpp.s
+.PHONY : src/app/xserver_datetime.s
+
+# target to generate assembly for a file
+src/app/xserver_datetime.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/app/xserver_datetime.cpp.s
+.PHONY : src/app/xserver_datetime.cpp.s
+
+src/app/xserver_http.obj: src/app/xserver_http.cpp.obj
+.PHONY : src/app/xserver_http.obj
+
+# target to build an object file
+src/app/xserver_http.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/app/xserver_http.cpp.obj
+.PHONY : src/app/xserver_http.cpp.obj
+
+src/app/xserver_http.i: src/app/xserver_http.cpp.i
+.PHONY : src/app/xserver_http.i
+
+# target to preprocess a source file
+src/app/xserver_http.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/app/xserver_http.cpp.i
+.PHONY : src/app/xserver_http.cpp.i
+
+src/app/xserver_http.s: src/app/xserver_http.cpp.s
+.PHONY : src/app/xserver_http.s
+
+# target to generate assembly for a file
+src/app/xserver_http.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/app/xserver_http.cpp.s
+.PHONY : src/app/xserver_http.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -220,6 +268,54 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/network/Driver.obj: src/network/Driver.cpp.obj
+.PHONY : src/network/Driver.obj
+
+# target to build an object file
+src/network/Driver.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/network/Driver.cpp.obj
+.PHONY : src/network/Driver.cpp.obj
+
+src/network/Driver.i: src/network/Driver.cpp.i
+.PHONY : src/network/Driver.i
+
+# target to preprocess a source file
+src/network/Driver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/network/Driver.cpp.i
+.PHONY : src/network/Driver.cpp.i
+
+src/network/Driver.s: src/network/Driver.cpp.s
+.PHONY : src/network/Driver.s
+
+# target to generate assembly for a file
+src/network/Driver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/network/Driver.cpp.s
+.PHONY : src/network/Driver.cpp.s
+
+src/network/Ether.obj: src/network/Ether.cpp.obj
+.PHONY : src/network/Ether.obj
+
+# target to build an object file
+src/network/Ether.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/network/Ether.cpp.obj
+.PHONY : src/network/Ether.cpp.obj
+
+src/network/Ether.i: src/network/Ether.cpp.i
+.PHONY : src/network/Ether.i
+
+# target to preprocess a source file
+src/network/Ether.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/network/Ether.cpp.i
+.PHONY : src/network/Ether.cpp.i
+
+src/network/Ether.s: src/network/Ether.cpp.s
+.PHONY : src/network/Ether.s
+
+# target to generate assembly for a file
+src/network/Ether.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/network/Ether.cpp.s
+.PHONY : src/network/Ether.cpp.s
+
 src/network/Hello.obj: src/network/Hello.cpp.obj
 .PHONY : src/network/Hello.obj
 
@@ -243,6 +339,30 @@ src/network/Hello.s: src/network/Hello.cpp.s
 src/network/Hello.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/network/Hello.cpp.s
 .PHONY : src/network/Hello.cpp.s
+
+src/network/Packet.obj: src/network/Packet.cpp.obj
+.PHONY : src/network/Packet.obj
+
+# target to build an object file
+src/network/Packet.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/network/Packet.cpp.obj
+.PHONY : src/network/Packet.cpp.obj
+
+src/network/Packet.i: src/network/Packet.cpp.i
+.PHONY : src/network/Packet.i
+
+# target to preprocess a source file
+src/network/Packet.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/network/Packet.cpp.i
+.PHONY : src/network/Packet.cpp.i
+
+src/network/Packet.s: src/network/Packet.cpp.s
+.PHONY : src/network/Packet.s
+
+# target to generate assembly for a file
+src/network/Packet.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/network/Packet.cpp.s
+.PHONY : src/network/Packet.cpp.s
 
 src/network/xnet_tiny.obj: src/network/xnet_tiny.cpp.obj
 .PHONY : src/network/xnet_tiny.obj
@@ -285,12 +405,27 @@ help:
 	@echo ... src/app/port_pcap.obj
 	@echo ... src/app/port_pcap.i
 	@echo ... src/app/port_pcap.s
+	@echo ... src/app/xserver_datetime.obj
+	@echo ... src/app/xserver_datetime.i
+	@echo ... src/app/xserver_datetime.s
+	@echo ... src/app/xserver_http.obj
+	@echo ... src/app/xserver_http.i
+	@echo ... src/app/xserver_http.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/network/Driver.obj
+	@echo ... src/network/Driver.i
+	@echo ... src/network/Driver.s
+	@echo ... src/network/Ether.obj
+	@echo ... src/network/Ether.i
+	@echo ... src/network/Ether.s
 	@echo ... src/network/Hello.obj
 	@echo ... src/network/Hello.i
 	@echo ... src/network/Hello.s
+	@echo ... src/network/Packet.obj
+	@echo ... src/network/Packet.i
+	@echo ... src/network/Packet.s
 	@echo ... src/network/xnet_tiny.obj
 	@echo ... src/network/xnet_tiny.i
 	@echo ... src/network/xnet_tiny.s

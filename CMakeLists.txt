@@ -6,14 +6,21 @@ project(network_protocol_stack_cpp VERSION 0.1.0)
 # add_library(pcap_lib STATIC 
 #     ${PROJECT_SOURCE_DIR}/lib/xnet/pcap_device.cpp
 # )
+
+file(GLOB_RECURSE ALL_SOURCE
+        ${PROJECT_SOURCE_DIR}/src/*.cpp
+        ${PROJECT_SOURCE_DIR}/src/*.c
+)
+
 set(SOURCES
     ${PROJECT_SOURCE_DIR}/lib/xnet/pcap_device.cpp
-    ${PROJECT_SOURCE_DIR}/src/app/port_pcap.cpp
+    # ${PROJECT_SOURCE_DIR}/src/app/port_pcap.cpp
 
     # ${PROJECT_SOURCE_DIR}/lib/xnet/enc28j60_device.cpp
-    ${PROJECT_SOURCE_DIR}/src/network/xnet_tiny.cpp
-    ${PROJECT_SOURCE_DIR}/src/network/Hello.cpp
-    ${PROJECT_SOURCE_DIR}/src/main.cpp
+    # ${PROJECT_SOURCE_DIR}/src/network/xnet_tiny.cpp
+    # ${PROJECT_SOURCE_DIR}/src/network/Hello.cpp
+    # ${PROJECT_SOURCE_DIR}/src/main.cpp
+    ${ALL_SOURCE}
 )
 
 
@@ -29,7 +36,6 @@ target_include_directories(${PROJECT_NAME}
         ${PROJECT_SOURCE_DIR}/lib/npcap/Include
         ${PROJECT_SOURCE_DIR}/lib/xnet
         ${PROJECT_SOURCE_DIR}/src/include
-        
 )
 
 # link_libraries(${PROJECT_NAME} ws2_32)

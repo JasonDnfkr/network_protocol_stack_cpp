@@ -11,8 +11,28 @@
 },
 {
   "directory": "E:/Data/Work/Job/Cpp/network_protocol/build",
-  "command": "E:\\Environment\\mingw64\\bin\\g++.exe  @CMakeFiles/network_protocol_stack_cpp.dir/includes_CXX.rsp -g -o CMakeFiles\\network_protocol_stack_cpp.dir\\src\\network\\xnet_tiny.cpp.obj -c E:\\Data\\Work\\Job\\Cpp\\network_protocol\\src\\network\\xnet_tiny.cpp",
-  "file": "E:/Data/Work/Job/Cpp/network_protocol/src/network/xnet_tiny.cpp"
+  "command": "E:\\Environment\\mingw64\\bin\\g++.exe  @CMakeFiles/network_protocol_stack_cpp.dir/includes_CXX.rsp -g -o CMakeFiles\\network_protocol_stack_cpp.dir\\src\\app\\xserver_datetime.cpp.obj -c E:\\Data\\Work\\Job\\Cpp\\network_protocol\\src\\app\\xserver_datetime.cpp",
+  "file": "E:/Data/Work/Job/Cpp/network_protocol/src/app/xserver_datetime.cpp"
+},
+{
+  "directory": "E:/Data/Work/Job/Cpp/network_protocol/build",
+  "command": "E:\\Environment\\mingw64\\bin\\g++.exe  @CMakeFiles/network_protocol_stack_cpp.dir/includes_CXX.rsp -g -o CMakeFiles\\network_protocol_stack_cpp.dir\\src\\app\\xserver_http.cpp.obj -c E:\\Data\\Work\\Job\\Cpp\\network_protocol\\src\\app\\xserver_http.cpp",
+  "file": "E:/Data/Work/Job/Cpp/network_protocol/src/app/xserver_http.cpp"
+},
+{
+  "directory": "E:/Data/Work/Job/Cpp/network_protocol/build",
+  "command": "E:\\Environment\\mingw64\\bin\\g++.exe  @CMakeFiles/network_protocol_stack_cpp.dir/includes_CXX.rsp -g -o CMakeFiles\\network_protocol_stack_cpp.dir\\src\\main.cpp.obj -c E:\\Data\\Work\\Job\\Cpp\\network_protocol\\src\\main.cpp",
+  "file": "E:/Data/Work/Job/Cpp/network_protocol/src/main.cpp"
+},
+{
+  "directory": "E:/Data/Work/Job/Cpp/network_protocol/build",
+  "command": "E:\\Environment\\mingw64\\bin\\g++.exe  @CMakeFiles/network_protocol_stack_cpp.dir/includes_CXX.rsp -g -o CMakeFiles\\network_protocol_stack_cpp.dir\\src\\network\\Driver.cpp.obj -c E:\\Data\\Work\\Job\\Cpp\\network_protocol\\src\\network\\Driver.cpp",
+  "file": "E:/Data/Work/Job/Cpp/network_protocol/src/network/Driver.cpp"
+},
+{
+  "directory": "E:/Data/Work/Job/Cpp/network_protocol/build",
+  "command": "E:\\Environment\\mingw64\\bin\\g++.exe  @CMakeFiles/network_protocol_stack_cpp.dir/includes_CXX.rsp -g -o CMakeFiles\\network_protocol_stack_cpp.dir\\src\\network\\Ether.cpp.obj -c E:\\Data\\Work\\Job\\Cpp\\network_protocol\\src\\network\\Ether.cpp",
+  "file": "E:/Data/Work/Job/Cpp/network_protocol/src/network/Ether.cpp"
 },
 {
   "directory": "E:/Data/Work/Job/Cpp/network_protocol/build",
@@ -21,7 +41,12 @@
 },
 {
   "directory": "E:/Data/Work/Job/Cpp/network_protocol/build",
-  "command": "E:\\Environment\\mingw64\\bin\\g++.exe  @CMakeFiles/network_protocol_stack_cpp.dir/includes_CXX.rsp -g -o CMakeFiles\\network_protocol_stack_cpp.dir\\src\\main.cpp.obj -c E:\\Data\\Work\\Job\\Cpp\\network_protocol\\src\\main.cpp",
-  "file": "E:/Data/Work/Job/Cpp/network_protocol/src/main.cpp"
+  "command": "E:\\Environment\\mingw64\\bin\\g++.exe  @CMakeFiles/network_protocol_stack_cpp.dir/includes_CXX.rsp -g -o CMakeFiles\\network_protocol_stack_cpp.dir\\src\\network\\Packet.cpp.obj -c E:\\Data\\Work\\Job\\Cpp\\network_protocol\\src\\network\\Packet.cpp",
+  "file": "E:/Data/Work/Job/Cpp/network_protocol/src/network/Packet.cpp"
+},
+{
+  "directory": "E:/Data/Work/Job/Cpp/network_protocol/build",
+  "command": "E:\\Environment\\mingw64\\bin\\g++.exe  @CMakeFiles/network_protocol_stack_cpp.dir/includes_CXX.rsp -g -o CMakeFiles\\network_protocol_stack_cpp.dir\\src\\network\\xnet_tiny.cpp.obj -c E:\\Data\\Work\\Job\\Cpp\\network_protocol\\src\\network\\xnet_tiny.cpp",
+  "file": "E:/Data/Work/Job/Cpp/network_protocol/src/network/xnet_tiny.cpp"
 }
 ]
