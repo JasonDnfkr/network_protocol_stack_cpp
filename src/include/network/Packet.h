@@ -4,8 +4,6 @@
 #include <network/Config.h>
 
 #include <cstdint>
-#include <vector>
-
 
 /**
  * @brief 用于从 pcap 驱动里收发网卡接收到的 Ether 数据包
@@ -40,10 +38,8 @@ public:
 
     void alloc_packet(uint16_t data_size);
     
-    // void alloc_rx_packet(uint16_t data_size);
 
     uint8_t* get_data();
-    // uint8_t* set_data(uint16_t )
 
     void set_size(uint16_t size);
     uint16_t get_size();
