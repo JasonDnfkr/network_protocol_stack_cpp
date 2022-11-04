@@ -26,6 +26,11 @@
 },
 {
   "directory": "E:/Data/Work/Job/Cpp/network_protocol/build",
+  "command": "E:\\Environment\\mingw64\\bin\\g++.exe  @CMakeFiles/network_protocol_stack_cpp.dir/includes_CXX.rsp -g -o CMakeFiles\\network_protocol_stack_cpp.dir\\src\\network\\Application.cpp.obj -c E:\\Data\\Work\\Job\\Cpp\\network_protocol\\src\\network\\Application.cpp",
+  "file": "E:/Data/Work/Job/Cpp/network_protocol/src/network/Application.cpp"
+},
+{
+  "directory": "E:/Data/Work/Job/Cpp/network_protocol/build",
   "command": "E:\\Environment\\mingw64\\bin\\g++.exe  @CMakeFiles/network_protocol_stack_cpp.dir/includes_CXX.rsp -g -o CMakeFiles\\network_protocol_stack_cpp.dir\\src\\network\\Driver.cpp.obj -c E:\\Data\\Work\\Job\\Cpp\\network_protocol\\src\\network\\Driver.cpp",
   "file": "E:/Data/Work/Job/Cpp/network_protocol/src/network/Driver.cpp"
 },

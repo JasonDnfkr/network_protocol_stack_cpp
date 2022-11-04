@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/network_protocol_stack_cpp.dir/src/app/xserver_http.cpp.obj.d"
   "CMakeFiles/network_protocol_stack_cpp.dir/src/main.cpp.obj"
   "CMakeFiles/network_protocol_stack_cpp.dir/src/main.cpp.obj.d"
+  "CMakeFiles/network_protocol_stack_cpp.dir/src/network/Application.cpp.obj"
+  "CMakeFiles/network_protocol_stack_cpp.dir/src/network/Application.cpp.obj.d"
   "CMakeFiles/network_protocol_stack_cpp.dir/src/network/Driver.cpp.obj"
   "CMakeFiles/network_protocol_stack_cpp.dir/src/network/Driver.cpp.obj.d"
   "CMakeFiles/network_protocol_stack_cpp.dir/src/network/Ether.cpp.obj"

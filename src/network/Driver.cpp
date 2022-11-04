@@ -1,4 +1,5 @@
 #include <network/Driver.h>
+#include <network/Ether.h>
 
 #include <cstring>
 #include <cstdint>
@@ -52,6 +53,7 @@ Packet* Driver::driver_read() {
         packet->set_size(size);
         return packet;
     }
+    delete packet;
     return (Packet*) 0;
 }
 
@@ -69,5 +71,13 @@ void Driver::ethernet_poll() {
 void Driver::ethernet_in(Packet* packet) {
     printf("driver: ethernet in!\n");
     // if (packet->get_size() <= sizeo)
-    
+    Ether* ether_packet = new Ether((Ether*)packet);
+
+    switch (ether_packet->get_protocol()) {
+        case XNET_PROTOCOL_ARP:
+            break;
+
+        case XNET_PROTOCOL_IP:
+            break;
+    }
 }

@@ -268,6 +268,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/network/Application.obj: src/network/Application.cpp.obj
+.PHONY : src/network/Application.obj
+
+# target to build an object file
+src/network/Application.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/network/Application.cpp.obj
+.PHONY : src/network/Application.cpp.obj
+
+src/network/Application.i: src/network/Application.cpp.i
+.PHONY : src/network/Application.i
+
+# target to preprocess a source file
+src/network/Application.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/network/Application.cpp.i
+.PHONY : src/network/Application.cpp.i
+
+src/network/Application.s: src/network/Application.cpp.s
+.PHONY : src/network/Application.s
+
+# target to generate assembly for a file
+src/network/Application.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/network/Application.cpp.s
+.PHONY : src/network/Application.cpp.s
+
 src/network/Driver.obj: src/network/Driver.cpp.obj
 .PHONY : src/network/Driver.obj
 
@@ -414,6 +438,9 @@ help:
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/network/Application.obj
+	@echo ... src/network/Application.i
+	@echo ... src/network/Application.s
 	@echo ... src/network/Driver.obj
 	@echo ... src/network/Driver.i
 	@echo ... src/network/Driver.s
