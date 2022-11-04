@@ -1,0 +1,2 @@
+E:\Environment\mingw64\bin\ar.exe qc libpcap_lib.a CMakeFiles/pcap_lib.dir/lib/xnet/pcap_device.cpp.obj
+E:\Environment\mingw64\bin\ranlib.exe libpcap_lib.a

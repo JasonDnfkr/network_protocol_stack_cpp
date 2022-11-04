@@ -1,0 +1,1 @@
+ E:/Data/Work/Job/Cpp/network_protocol/lib/libws2_32.a E:/Data/Work/Job/Cpp/network_protocol/lib/npcap/Lib/x64/Packet.lib E:/Data/Work/Job/Cpp/network_protocol/lib/npcap/Lib/x64/wpcap.lib -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

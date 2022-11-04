@@ -1,0 +1,5 @@
+E:/Data/Work/Job/Cpp/network_protocol/build/CMakeFiles/network_protocol_stack_cpp.dir
+E:/Data/Work/Job/Cpp/network_protocol/build/CMakeFiles/package.dir
+E:/Data/Work/Job/Cpp/network_protocol/build/CMakeFiles/package_source.dir
+E:/Data/Work/Job/Cpp/network_protocol/build/CMakeFiles/edit_cache.dir
+E:/Data/Work/Job/Cpp/network_protocol/build/CMakeFiles/rebuild_cache.dir

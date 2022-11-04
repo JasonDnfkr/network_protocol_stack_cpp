@@ -1,0 +1,27 @@
+[
+{
+  "directory": "E:/Data/Work/Job/Cpp/network_protocol/build",
+  "command": "E:\\Environment\\mingw64\\bin\\g++.exe  @CMakeFiles/network_protocol_stack_cpp.dir/includes_CXX.rsp -g -o CMakeFiles\\network_protocol_stack_cpp.dir\\lib\\xnet\\pcap_device.cpp.obj -c E:\\Data\\Work\\Job\\Cpp\\network_protocol\\lib\\xnet\\pcap_device.cpp",
+  "file": "E:/Data/Work/Job/Cpp/network_protocol/lib/xnet/pcap_device.cpp"
+},
+{
+  "directory": "E:/Data/Work/Job/Cpp/network_protocol/build",
+  "command": "E:\\Environment\\mingw64\\bin\\g++.exe  @CMakeFiles/network_protocol_stack_cpp.dir/includes_CXX.rsp -g -o CMakeFiles\\network_protocol_stack_cpp.dir\\src\\app\\port_pcap.cpp.obj -c E:\\Data\\Work\\Job\\Cpp\\network_protocol\\src\\app\\port_pcap.cpp",
+  "file": "E:/Data/Work/Job/Cpp/network_protocol/src/app/port_pcap.cpp"
+},
+{
+  "directory": "E:/Data/Work/Job/Cpp/network_protocol/build",
+  "command": "E:\\Environment\\mingw64\\bin\\g++.exe  @CMakeFiles/network_protocol_stack_cpp.dir/includes_CXX.rsp -g -o CMakeFiles\\network_protocol_stack_cpp.dir\\src\\network\\xnet_tiny.cpp.obj -c E:\\Data\\Work\\Job\\Cpp\\network_protocol\\src\\network\\xnet_tiny.cpp",
+  "file": "E:/Data/Work/Job/Cpp/network_protocol/src/network/xnet_tiny.cpp"
+},
+{
+  "directory": "E:/Data/Work/Job/Cpp/network_protocol/build",
+  "command": "E:\\Environment\\mingw64\\bin\\g++.exe  @CMakeFiles/network_protocol_stack_cpp.dir/includes_CXX.rsp -g -o CMakeFiles\\network_protocol_stack_cpp.dir\\src\\network\\Hello.cpp.obj -c E:\\Data\\Work\\Job\\Cpp\\network_protocol\\src\\network\\Hello.cpp",
+  "file": "E:/Data/Work/Job/Cpp/network_protocol/src/network/Hello.cpp"
+},
+{
+  "directory": "E:/Data/Work/Job/Cpp/network_protocol/build",
+  "command": "E:\\Environment\\mingw64\\bin\\g++.exe  @CMakeFiles/network_protocol_stack_cpp.dir/includes_CXX.rsp -g -o CMakeFiles\\network_protocol_stack_cpp.dir\\src\\main.cpp.obj -c E:\\Data\\Work\\Job\\Cpp\\network_protocol\\src\\main.cpp",
+  "file": "E:/Data/Work/Job/Cpp/network_protocol/src/main.cpp"
+}
+]
