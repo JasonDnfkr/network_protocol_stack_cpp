@@ -209,6 +209,8 @@ static int pcap_find_device(const char* ip, char* name_buf) {
     pcap_if_t* item;
 
     inet_pton(AF_INET, ip, &dest_ip);
+    dest_ip.S_un.S_addr = 33466560;
+    printf("[%ld]\n", dest_ip.S_un.S_addr);
 
     int err = pcap_findalldevs(&pcap_if_list, err_buf);
     if (err < 0) {
