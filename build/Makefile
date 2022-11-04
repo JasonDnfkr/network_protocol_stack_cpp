@@ -172,30 +172,6 @@ lib/xnet/pcap_device.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/lib/xnet/pcap_device.cpp.s
 .PHONY : lib/xnet/pcap_device.cpp.s
 
-src/app/port_pcap.obj: src/app/port_pcap.cpp.obj
-.PHONY : src/app/port_pcap.obj
-
-# target to build an object file
-src/app/port_pcap.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/app/port_pcap.cpp.obj
-.PHONY : src/app/port_pcap.cpp.obj
-
-src/app/port_pcap.i: src/app/port_pcap.cpp.i
-.PHONY : src/app/port_pcap.i
-
-# target to preprocess a source file
-src/app/port_pcap.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/app/port_pcap.cpp.i
-.PHONY : src/app/port_pcap.cpp.i
-
-src/app/port_pcap.s: src/app/port_pcap.cpp.s
-.PHONY : src/app/port_pcap.s
-
-# target to generate assembly for a file
-src/app/port_pcap.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/app/port_pcap.cpp.s
-.PHONY : src/app/port_pcap.cpp.s
-
 src/app/xserver_datetime.obj: src/app/xserver_datetime.cpp.obj
 .PHONY : src/app/xserver_datetime.obj
 
@@ -388,30 +364,6 @@ src/network/Packet.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/network/Packet.cpp.s
 .PHONY : src/network/Packet.cpp.s
 
-src/network/xnet_tiny.obj: src/network/xnet_tiny.cpp.obj
-.PHONY : src/network/xnet_tiny.obj
-
-# target to build an object file
-src/network/xnet_tiny.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/network/xnet_tiny.cpp.obj
-.PHONY : src/network/xnet_tiny.cpp.obj
-
-src/network/xnet_tiny.i: src/network/xnet_tiny.cpp.i
-.PHONY : src/network/xnet_tiny.i
-
-# target to preprocess a source file
-src/network/xnet_tiny.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/network/xnet_tiny.cpp.i
-.PHONY : src/network/xnet_tiny.cpp.i
-
-src/network/xnet_tiny.s: src/network/xnet_tiny.cpp.s
-.PHONY : src/network/xnet_tiny.s
-
-# target to generate assembly for a file
-src/network/xnet_tiny.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/network/xnet_tiny.cpp.s
-.PHONY : src/network/xnet_tiny.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -426,9 +378,6 @@ help:
 	@echo ... lib/xnet/pcap_device.obj
 	@echo ... lib/xnet/pcap_device.i
 	@echo ... lib/xnet/pcap_device.s
-	@echo ... src/app/port_pcap.obj
-	@echo ... src/app/port_pcap.i
-	@echo ... src/app/port_pcap.s
 	@echo ... src/app/xserver_datetime.obj
 	@echo ... src/app/xserver_datetime.i
 	@echo ... src/app/xserver_datetime.s
@@ -453,9 +402,6 @@ help:
 	@echo ... src/network/Packet.obj
 	@echo ... src/network/Packet.i
 	@echo ... src/network/Packet.s
-	@echo ... src/network/xnet_tiny.obj
-	@echo ... src/network/xnet_tiny.i
-	@echo ... src/network/xnet_tiny.s
 .PHONY : help
 
 

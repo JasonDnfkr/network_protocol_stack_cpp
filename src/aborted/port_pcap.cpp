@@ -30,9 +30,12 @@
  * 如果你有兴趣的话，欢迎关注。
  */
 // #include "pcap_device.h"
-#include <pcap_device.h>
-#include <network/xnet_tiny.h>
+// #include <pcap_device.h>
+// #include <network/xnet_tiny.h>
+// #include <network/Config.h>
 
+
+/*
 static pcap_t* pcap;
 
 const char* ip_str = "192.168.254.1";
@@ -65,3 +68,4 @@ xnet_err_t xnet_driver_read(xnet_packet_t** packet) {
     return XNET_ERR_IO;
 }
 
+*/

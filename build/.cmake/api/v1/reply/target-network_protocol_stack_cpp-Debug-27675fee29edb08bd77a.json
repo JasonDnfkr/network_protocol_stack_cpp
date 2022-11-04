@@ -81,9 +81,7 @@
 				5,
 				6,
 				7,
-				8,
-				9,
-				10
+				8
 			]
 		}
 	],
@@ -143,9 +141,7 @@
 				5,
 				6,
 				7,
-				8,
-				9,
-				10
+				8
 			]
 		}
 	],
@@ -160,7 +156,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/app/port_pcap.cpp",
+			"path" : "src/main.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -173,12 +169,6 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/app/xserver_http.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/main.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -209,12 +199,6 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/network/Packet.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/network/xnet_tiny.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

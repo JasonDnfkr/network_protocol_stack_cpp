@@ -13,12 +13,6 @@
  */
 class Packet {
 protected:
-    typedef struct _xnet_packet_t {
-        uint16_t size;
-        uint8_t* data;
-        uint8_t payload[XNET_CFG_PACKET_MAX_SIZE];
-    } xnet_packet_t;
-
     xnet_packet_t* net_packet;
 
     bool aborted;

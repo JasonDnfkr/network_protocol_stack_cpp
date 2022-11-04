@@ -8,8 +8,8 @@ project(network_protocol_stack_cpp VERSION 0.1.0)
 # )
 
 file(GLOB_RECURSE ALL_SOURCE
-        ${PROJECT_SOURCE_DIR}/src/*.cpp
-        ${PROJECT_SOURCE_DIR}/src/*.c
+        ${PROJECT_SOURCE_DIR}/src/app/*.cpp
+        ${PROJECT_SOURCE_DIR}/src/network/*.cpp
 )
 
 set(SOURCES
@@ -19,7 +19,7 @@ set(SOURCES
     # ${PROJECT_SOURCE_DIR}/lib/xnet/enc28j60_device.cpp
     # ${PROJECT_SOURCE_DIR}/src/network/xnet_tiny.cpp
     # ${PROJECT_SOURCE_DIR}/src/network/Hello.cpp
-    # ${PROJECT_SOURCE_DIR}/src/main.cpp
+    ${PROJECT_SOURCE_DIR}/src/main.cpp
     ${ALL_SOURCE}
 )
 

@@ -1,8 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/network_protocol_stack_cpp.dir/lib/xnet/pcap_device.cpp.obj"
   "CMakeFiles/network_protocol_stack_cpp.dir/lib/xnet/pcap_device.cpp.obj.d"
-  "CMakeFiles/network_protocol_stack_cpp.dir/src/app/port_pcap.cpp.obj"
-  "CMakeFiles/network_protocol_stack_cpp.dir/src/app/port_pcap.cpp.obj.d"
   "CMakeFiles/network_protocol_stack_cpp.dir/src/app/xserver_datetime.cpp.obj"
   "CMakeFiles/network_protocol_stack_cpp.dir/src/app/xserver_datetime.cpp.obj.d"
   "CMakeFiles/network_protocol_stack_cpp.dir/src/app/xserver_http.cpp.obj"
@@ -19,8 +17,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/network_protocol_stack_cpp.dir/src/network/Hello.cpp.obj.d"
   "CMakeFiles/network_protocol_stack_cpp.dir/src/network/Packet.cpp.obj"
   "CMakeFiles/network_protocol_stack_cpp.dir/src/network/Packet.cpp.obj.d"
-  "CMakeFiles/network_protocol_stack_cpp.dir/src/network/xnet_tiny.cpp.obj"
-  "CMakeFiles/network_protocol_stack_cpp.dir/src/network/xnet_tiny.cpp.obj.d"
   "libnetwork_protocol_stack_cpp.dll.a"
   "network_protocol_stack_cpp.exe"
   "network_protocol_stack_cpp.exe.manifest"
