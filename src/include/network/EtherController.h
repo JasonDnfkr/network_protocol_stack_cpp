@@ -16,11 +16,13 @@ private:
     
 
 public:
-    EtherController(/* args */);
+    EtherController();
     ~EtherController();
 
     // 接收最底层的 Packet* 数据包
-    void ethernet_in(Packet* packet);
+    void ethernet_in(Ether* ether_packet);
+
+    // 发送
 };
 
 

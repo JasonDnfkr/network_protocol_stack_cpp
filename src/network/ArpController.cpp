@@ -14,6 +14,6 @@ void arp_make_request(const xipaddr_t* ipaddr) {
 
 
 
-void arp_in(Ether* ether_packet) {
-
+void arp_in(ArpPacket* arp_packet) {
+    
 }

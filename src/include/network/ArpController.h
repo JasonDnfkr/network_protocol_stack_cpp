@@ -15,7 +15,7 @@ private:
 
 
 public:
-    ArpController(/* args */);
+    ArpController();
     ~ArpController();
 
     // 接收 Ether* ether_packet
