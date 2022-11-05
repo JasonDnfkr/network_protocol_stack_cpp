@@ -7,8 +7,8 @@
 
 class Driver {
 private:
-    char* ip_str;
-    char* my_mac_addr;
+    const char* ip_str;
+    const char* my_mac_addr;
     pcap_t* pcap;
 
     void ethernet_in(Packet* packet);

@@ -16,10 +16,6 @@ private:
 
     xether_hdr_t* hdr;
 
-    // uint8_t     dest_mac[XNET_MAC_ADDR_SIZE];   // 目标 mac 地址
-    // uint8_t     src_mac[XNET_MAC_ADDR_SIZE];    // 源 mac 地址
-    // uint16_t    protocol;                       // 协议/长度
-
 protected:
     void get_header();
     

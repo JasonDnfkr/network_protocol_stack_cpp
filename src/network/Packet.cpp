@@ -3,8 +3,9 @@
 #include <cstdlib>
 
 Packet::Packet(/* args */) {
-    net_packet = (xnet_packet_t*) malloc(sizeof(xnet_packet_t));
-    memset(net_packet, 0, sizeof(net_packet));
+    net_packet = new xnet_packet_t();
+    // net_packet = (xnet_packet_t*) malloc(sizeof(xnet_packet_t));
+    // memset(net_packet, 0, sizeof(net_packet));
     // memset(&rx_packet, 0, sizeof(rx_packet));
     aborted = false;
     header_size = 0;
@@ -13,11 +14,12 @@ Packet::Packet(/* args */) {
 
 // Overload 1
 Packet::Packet(uint16_t data_size) {
-    net_packet = (xnet_packet_t*) malloc(sizeof(xnet_packet_t));
-    memset(net_packet, 0, sizeof(net_packet));
+    net_packet = new xnet_packet_t(data_size);
+    // net_packet = (xnet_packet_t*) malloc(sizeof(xnet_packet_t));
+    // memset(net_packet, 0, sizeof(net_packet));
     // memset(&rx_packet, 0, sizeof(rx_packet));
-    net_packet->data = net_packet->payload + XNET_CFG_PACKET_MAX_SIZE - data_size;
-    net_packet->size = data_size;
+    // net_packet->data = net_packet->payload + XNET_CFG_PACKET_MAX_SIZE - data_size;
+    // net_packet->size = data_size;
     
     aborted = false;
     header_size = 0;
@@ -25,13 +27,14 @@ Packet::Packet(uint16_t data_size) {
 
 
 Packet::~Packet() {
+    delete net_packet;
 }
 
 
-void Packet::alloc_packet(uint16_t data_size) {
-    net_packet->data = net_packet->payload + XNET_CFG_PACKET_MAX_SIZE - data_size;
-    net_packet->size = data_size;
-}
+// void Packet::alloc_packet(uint16_t data_size) {
+//     net_packet->data = net_packet->payload + XNET_CFG_PACKET_MAX_SIZE - data_size;
+//     net_packet->size = data_size;
+// }
 
 
 void Packet::add_header(uint16_t new_header_size) {
