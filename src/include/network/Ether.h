@@ -17,7 +17,8 @@ private:
     xether_hdr_t* hdr;
 
 protected:
-    void get_header();
+    // 提取 header 的数据结构及内容至 hdr 中
+    void recv_header();
     
     
 public:

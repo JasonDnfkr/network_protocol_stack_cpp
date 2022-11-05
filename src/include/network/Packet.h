@@ -27,9 +27,6 @@ protected:
     // 扩增数据包的大小：将 header 的字节数添加进数据包
     void add_header(uint16_t header_size);
 
-    // 缩减数据包的大小：将 header 的字节数移除出数据包
-    void remove_header();
-
     // 设置 header 的字节数
     void set_header_size(uint16_t header_size);
 
@@ -37,7 +34,7 @@ protected:
     uint16_t get_header_size();
 
     // 提取 header 的数据结构及内容至 hdr 中
-    void get_header();
+    void recv_header();
 
 
 public:
@@ -58,6 +55,9 @@ public:
 
     // uint16_t 返回数据包的大小 (包括 header 的大小)
     uint16_t get_size();
+
+    // 缩减数据包的大小：将 header 的字节数移除出数据包
+    void remove_header();
 };
 
 

@@ -17,4 +17,5 @@ CMakeFiles/network_protocol_stack_cpp.dir/src/network/ArpPacket.cpp.obj: \
  E:/Environment/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
  E:/Environment/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/stddef.h \
  E:/Environment/mingw64/x86_64-w64-mingw32/include/stddef.h \
- E:/Data/Work/Job/Cpp/network_protocol/src/include/network/Packet.h
+ E:/Data/Work/Job/Cpp/network_protocol/src/include/network/Packet.h \
+ E:/Data/Work/Job/Cpp/network_protocol/src/include/network/Ether.h

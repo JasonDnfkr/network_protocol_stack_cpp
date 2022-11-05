@@ -26,6 +26,11 @@
 },
 {
   "directory": "E:/Data/Work/Job/Cpp/network_protocol/build",
+  "command": "E:\\Environment\\mingw64\\bin\\g++.exe  @CMakeFiles/network_protocol_stack_cpp.dir/includes_CXX.rsp -g -o CMakeFiles\\network_protocol_stack_cpp.dir\\src\\network\\ArpController.cpp.obj -c E:\\Data\\Work\\Job\\Cpp\\network_protocol\\src\\network\\ArpController.cpp",
+  "file": "E:/Data/Work/Job/Cpp/network_protocol/src/network/ArpController.cpp"
+},
+{
+  "directory": "E:/Data/Work/Job/Cpp/network_protocol/build",
   "command": "E:\\Environment\\mingw64\\bin\\g++.exe  @CMakeFiles/network_protocol_stack_cpp.dir/includes_CXX.rsp -g -o CMakeFiles\\network_protocol_stack_cpp.dir\\src\\network\\ArpEntry.cpp.obj -c E:\\Data\\Work\\Job\\Cpp\\network_protocol\\src\\network\\ArpEntry.cpp",
   "file": "E:/Data/Work/Job/Cpp/network_protocol/src/network/ArpEntry.cpp"
 },
@@ -53,6 +58,11 @@
   "directory": "E:/Data/Work/Job/Cpp/network_protocol/build",
   "command": "E:\\Environment\\mingw64\\bin\\g++.exe  @CMakeFiles/network_protocol_stack_cpp.dir/includes_CXX.rsp -g -o CMakeFiles\\network_protocol_stack_cpp.dir\\src\\network\\Ether.cpp.obj -c E:\\Data\\Work\\Job\\Cpp\\network_protocol\\src\\network\\Ether.cpp",
   "file": "E:/Data/Work/Job/Cpp/network_protocol/src/network/Ether.cpp"
+},
+{
+  "directory": "E:/Data/Work/Job/Cpp/network_protocol/build",
+  "command": "E:\\Environment\\mingw64\\bin\\g++.exe  @CMakeFiles/network_protocol_stack_cpp.dir/includes_CXX.rsp -g -o CMakeFiles\\network_protocol_stack_cpp.dir\\src\\network\\EtherController.cpp.obj -c E:\\Data\\Work\\Job\\Cpp\\network_protocol\\src\\network\\EtherController.cpp",
+  "file": "E:/Data/Work/Job/Cpp/network_protocol/src/network/EtherController.cpp"
 },
 {
   "directory": "E:/Data/Work/Job/Cpp/network_protocol/build",

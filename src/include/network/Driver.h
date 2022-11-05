@@ -1,8 +1,10 @@
 #ifndef __DRIVER_H__
 #define __DRIVER_H__
 
-#include <network/Config.h>
 #include <pcap_device.h>
+
+#include <network/Config.h>
+#include <network/EtherController.h>
 #include <network/Packet.h>
 
 class Driver {
@@ -11,16 +13,22 @@ private:
     const char* my_mac_addr;
     pcap_t* pcap;
 
-    void ethernet_in(Packet* packet);
+    EtherController* ether_controller;
+
+
+    // 驱动代码：发送数据包
+    void driver_send(Packet* packet);
+
+    // 驱动代码：从 npcap 接收数据包
+    Packet* driver_read();
     
 
 public:
     Driver(/* args */);
     ~Driver();
 
+    // 驱动代码：打开 npcap 网卡
     void driver_open();
-    void driver_send(Packet* packet);
-    Packet* driver_read();
 
     void ethernet_poll();
     

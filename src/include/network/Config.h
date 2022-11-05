@@ -3,9 +3,6 @@
 
 #include <cstdint>
 
-// 本机网卡 ip (存疑)
-extern const char* src_ip;
-extern const char src_mac_addr[6];
 
 // 2字节大小端转换
 #define swap_order16(v)   ((((v) & 0xff) << 8) | (((v) >> 8) & 0xff))
@@ -13,10 +10,13 @@ extern const char src_mac_addr[6];
 
 // Ether 包最大字节数：1516
 #define XNET_CFG_PACKET_MAX_SIZE        1516
+// 本软件协议栈的虚拟网卡 IP
+#define XNET_CFG_NETIF_IP               { 192, 168, 254, 2 } 
 // MAC 地址长度
 #define XNET_MAC_ADDR_SIZE              6
 // IP 地址长度
 #define XNET_IPV4_ADDR_SIZE             4
+
 
 // typedef struct _xnet_packet_t xnet_packet_t;
 
@@ -62,5 +62,19 @@ typedef struct _xarp_entry_t {
     uint16_t  tmo;                           // 当前剩余时间
     uint8_t   retry_cnt;                     // 当前重试次数
 } _xarp_entry_t;
+
+
+
+
+// 本地物理机器的 ip，使用该 ip 将数据包发出
+extern const char* src_ip;
+//
+extern const char src_mac_addr[];
+// 本软件虚拟网卡的 ip，后续使用这个 ip 通信
+extern const xipaddr_t netif_ipaddr;
+// mac 广播地址
+extern const uint8_t ether_broadcast[];
+
+
 
 #endif

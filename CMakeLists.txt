@@ -7,10 +7,15 @@ project(network_protocol_stack_cpp VERSION 0.1.0)
 #     ${PROJECT_SOURCE_DIR}/lib/xnet/pcap_device.cpp
 # )
 
-file(GLOB_RECURSE ALL_SOURCE
+file(GLOB_RECURSE CPP_SOURCE
         ${PROJECT_SOURCE_DIR}/src/app/*.cpp
         ${PROJECT_SOURCE_DIR}/src/network/*.cpp
 )
+
+# file(GLOB_RECURSE HEADER_SOURCE
+#         # ${PROJECT_SOURCE_DIR}/src/include/network/*.h
+#         ${PROJECT_SOURCE_DIR}/src/include
+# )
 
 set(SOURCES
     ${PROJECT_SOURCE_DIR}/lib/xnet/pcap_device.cpp
@@ -20,7 +25,7 @@ set(SOURCES
     # ${PROJECT_SOURCE_DIR}/src/network/xnet_tiny.cpp
     # ${PROJECT_SOURCE_DIR}/src/network/Hello.cpp
     ${PROJECT_SOURCE_DIR}/src/main.cpp
-    ${ALL_SOURCE}
+    ${CPP_SOURCE}
 )
 
 
@@ -36,6 +41,7 @@ target_include_directories(${PROJECT_NAME}
         ${PROJECT_SOURCE_DIR}/lib/npcap/Include
         ${PROJECT_SOURCE_DIR}/lib/xnet
         ${PROJECT_SOURCE_DIR}/src/include
+        # ${HEADER_SOURCE}
 )
 
 # link_libraries(${PROJECT_NAME} ws2_32)

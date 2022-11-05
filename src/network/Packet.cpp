@@ -2,11 +2,9 @@
 #include <cstring>
 #include <cstdlib>
 
-Packet::Packet(/* args */) {
+Packet::Packet() {
     net_packet = new xnet_packet_t();
-    // net_packet = (xnet_packet_t*) malloc(sizeof(xnet_packet_t));
-    // memset(net_packet, 0, sizeof(net_packet));
-    // memset(&rx_packet, 0, sizeof(rx_packet));
+
     aborted = false;
     header_size = 0;
 }
@@ -15,11 +13,6 @@ Packet::Packet(/* args */) {
 // Overload 1
 Packet::Packet(uint16_t data_size) {
     net_packet = new xnet_packet_t(data_size);
-    // net_packet = (xnet_packet_t*) malloc(sizeof(xnet_packet_t));
-    // memset(net_packet, 0, sizeof(net_packet));
-    // memset(&rx_packet, 0, sizeof(rx_packet));
-    // net_packet->data = net_packet->payload + XNET_CFG_PACKET_MAX_SIZE - data_size;
-    // net_packet->size = data_size;
     
     aborted = false;
     header_size = 0;
@@ -51,6 +44,9 @@ void Packet::remove_header() {
 
 void Packet::set_header_size(uint16_t header_size) {
     this->header_size = header_size;
+    // if (net_packet->data == net_packet->payload + XNET_CFG_PACKET_MAX_SIZE) {
+
+    // }
 }
 
 
@@ -59,7 +55,7 @@ uint16_t Packet::get_header_size() {
 }
 
 
-void Packet::get_header() {  }
+void Packet::recv_header() {  }
 
 
 void Packet::set_aborted(bool op) {

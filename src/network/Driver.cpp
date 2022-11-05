@@ -25,6 +25,8 @@ Driver::Driver() {
     for (int i = 0; i < 6; i++) {
         printf("%x ", my_mac_addr[i]);
     }
+
+    ether_controller = new EtherController();
 }
 
 
@@ -54,22 +56,13 @@ Packet* Driver::driver_read() {
         packet->set_size(size);
         return packet;
     }
+    
     delete packet;
     return (Packet*) 0;
 }
 
 
-void Driver::ethernet_poll() {
-    Packet* packet;
-
-    packet = driver_read();
-    if (packet) {
-        ethernet_in(packet);
-    }
-}
-
-
-void Driver::ethernet_in(Packet* packet) {
+static void ethernet_in(Packet* packet) {
     printf("driver: ethernet in!\n");
     // if (packet->get_size() <= sizeo)
     Ether* ether_packet = new Ether((Ether*)packet);
@@ -82,3 +75,17 @@ void Driver::ethernet_in(Packet* packet) {
             break;
     }
 }
+
+// 从驱动代码中查询是否接收到了 packet，
+// 有则接收，并转换为 Packet* 形式
+void Driver::ethernet_poll() {
+    Packet* packet;
+
+    packet = driver_read();
+    if (packet) {
+        // ethernet_in(packet);
+        ether_controller->ethernet_in(packet);
+    }
+}
+
+
