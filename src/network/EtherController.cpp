@@ -15,7 +15,7 @@ EtherController::~EtherController() { }
 
 
 void EtherController::ethernet_in(Ether* ether_packet) {
-    printf("ether_controller: Packet* received.\n");
+    printf("EtherController: Packet* received.\n");
     // Ether* ether_packet = new Ether(ether_packet);
 
     uint16_t protocol = ether_packet->get_protocol();
@@ -23,7 +23,10 @@ void EtherController::ethernet_in(Ether* ether_packet) {
 
     switch (protocol) {
     case XNET_PROTOCOL_ARP:
-        // arp_controller->arp_in((ArpPacket*)ether_packet);
+        printf("EtherController: switch to case XNET_PROTOCOL_ARP");
+        // ArpPacket* arp_packet = new ArpPacket((ArpPacket*)ether_packet);
+        // delete ether_packet;
+        // arp_controller->arp_in(arp_packet);
         
         break;
     

@@ -16,10 +16,10 @@ ArpPacket::ArpPacket() {
 }
 
 
-ArpPacket::ArpPacket(const ArpPacket* ether_packet) {
+ArpPacket::ArpPacket(const ArpPacket* arp_packet) {
     // 这里接收到的是 Ether* 包，有完整的 Ethernet II 报头，要去掉
-    net_packet = new xnet_packet_t(ether_packet->net_packet);
-    aborted = ether_packet->aborted;
+    net_packet = new xnet_packet_t(arp_packet->net_packet);
+    aborted = arp_packet->aborted;
     set_header_size(sizeof(xarp_hdr_t));
     
     recv_header();

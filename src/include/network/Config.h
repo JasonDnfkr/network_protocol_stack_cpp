@@ -8,6 +8,12 @@
 #define swap_order16(v)   ((((v) & 0xff) << 8) | (((v) >> 8) & 0xff))
 
 
+// read packet
+#define PACKET_READ                     0x0
+
+// transmit packet
+#define PACKET_TRANSMIT                 0x1
+
 // Ether 包最大字节数：1516
 #define XNET_CFG_PACKET_MAX_SIZE        1516
 // 本软件协议栈的虚拟网卡 IP

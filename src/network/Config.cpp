@@ -27,9 +27,10 @@ xnet_packet_t::_xnet_packet_t(uint16_t data_size) {
 // Constructor:
 // 获取从网络上接收到的数据包
 xnet_packet_t::_xnet_packet_t(const _xnet_packet_t* net_packet) {
+    memset(payload, 0, XNET_CFG_PACKET_MAX_SIZE);
     size = net_packet->size;
     memcpy(payload, net_packet->payload, XNET_CFG_PACKET_MAX_SIZE);
-    data = payload + XNET_CFG_PACKET_MAX_SIZE - size;
+    data = payload + (net_packet->data - net_packet->payload);
 }
 
 

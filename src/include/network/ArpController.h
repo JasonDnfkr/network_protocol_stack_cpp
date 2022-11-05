@@ -19,7 +19,7 @@ public:
     ~ArpController();
 
     // 接收 Ether* ether_packet
-    void arp_in(Ether* ether_packet);
+    void arp_in(ArpPacket* arp_packet);
 
     // 发送 arp 包
     // 参数：ip 地址

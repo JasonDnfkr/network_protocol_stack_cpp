@@ -53,6 +53,7 @@ Packet* Driver::driver_read() {
     size = pcap_device_read(pcap, packet->get_data(), XNET_CFG_PACKET_MAX_SIZE);
     if (size) {
         // printf(".");
+        // printf("packet data ptr position: %d\n", packet->get_data() - packet->debug_get_payload_ptr());
         packet->set_size(size);
         return packet;
     }

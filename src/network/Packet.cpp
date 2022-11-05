@@ -2,6 +2,14 @@
 #include <cstring>
 #include <cstdlib>
 
+
+// static Packet* alloc_for_read(uint16_t data_size) {
+//     Packet* rx_net_packet = new Packet(data_size);
+//     rx_net_packet->net_packet->data = rx_net_packet->net_packet->payload;
+
+// }
+
+
 Packet::Packet() {
     net_packet = new xnet_packet_t();
 
@@ -13,6 +21,23 @@ Packet::Packet() {
 // Overload 1
 Packet::Packet(uint16_t data_size) {
     net_packet = new xnet_packet_t(data_size);
+    
+    aborted = false;
+    header_size = 0;
+}
+
+// Overload 2
+Packet::Packet(uint16_t data_size, uint8_t flag) {
+    net_packet = new xnet_packet_t(data_size);
+
+    if (flag == PACKET_READ) {
+        net_packet->data = net_packet->payload;
+        net_packet->size = data_size;
+    }
+    else if (flag == PACKET_TRANSMIT) {
+        net_packet->data = net_packet->payload + XNET_CFG_PACKET_MAX_SIZE - data_size;
+        net_packet->size = data_size;
+    }
     
     aborted = false;
     header_size = 0;

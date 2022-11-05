@@ -40,7 +40,12 @@ protected:
 public:
     Packet(/* args */);
     Packet(uint16_t data_size);
+    Packet(uint16_t data_size, uint8_t flag);
+
     ~Packet();
+
+    // xnet_alloc_for_read(uint16_t data_size)
+    // static Packet* alloc_for_read(uint16_t data_size);
 
     // bool 返回该数据包是否无效
     bool is_aborted();
@@ -58,6 +63,11 @@ public:
 
     // 缩减数据包的大小：将 header 的字节数移除出数据包
     void remove_header();
+
+
+    uint8_t* debug_get_payload_ptr() {
+        return net_packet->payload;
+    }
 };
 
 
