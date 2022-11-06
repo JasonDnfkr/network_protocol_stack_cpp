@@ -6,6 +6,7 @@
 const char *src_ip = "192.168.254.1";
 const char src_mac_addr[6] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
 const xipaddr_t netif_ipaddr = XNET_CFG_NETIF_IP;
+const uint8_t netif_mac[6] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
 const uint8_t ether_broadcast[] = { 0xff, 0xff, 0xff, 0xff, 0xff, 0xff };
 
 
@@ -37,4 +38,17 @@ xnet_packet_t::_xnet_packet_t(const _xnet_packet_t* net_packet) {
 xnet_packet_t::~_xnet_packet_t() {
     // free(payload);
     // printf("Destructor");
+}
+
+
+std::string str_mac_addr(uint8_t* mac_addr) {
+    char tmp[18];
+    sprintf(tmp, "%02x:%02x:%02x:%02x:%02x:%02x", mac_addr[0], mac_addr[1], mac_addr[2], mac_addr[3], mac_addr[4], mac_addr[5]);
+    return tmp;
+}
+
+std::string str_ip_addr(uint8_t* ip_addr) {
+    char tmp[16];
+    sprintf(tmp, "%d.%d.%d.%d", ip_addr[0], ip_addr[1], ip_addr[2], ip_addr[3]);
+    return tmp;
 }

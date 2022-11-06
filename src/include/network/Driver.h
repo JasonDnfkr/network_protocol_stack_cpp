@@ -4,8 +4,10 @@
 #include <pcap_device.h>
 
 #include <network/Config.h>
-#include <network/EtherController.h>
+// #include <network/EtherController.h>
 #include <network/Packet.h>
+
+class EtherController;
 
 class Driver {
 private:
@@ -14,13 +16,6 @@ private:
     pcap_t* pcap;
 
     EtherController* ether_controller;
-
-
-    // 驱动代码：发送数据包
-    void driver_send(Packet* packet);
-
-    // 驱动代码：从 npcap 接收数据包
-    Packet* driver_read();
     
 
 public:
@@ -30,8 +25,16 @@ public:
     // 驱动代码：打开 npcap 网卡
     void driver_open();
 
-    void ethernet_poll();
-    
+    // 初始化
+    void driver_init();
+
+        // 驱动代码：发送数据包
+    void driver_send(Packet* packet);
+
+    // 驱动代码：从 npcap 接收数据包
+    Packet* driver_read();
+
+    void poll();
 };
 
 

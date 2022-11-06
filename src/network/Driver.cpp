@@ -1,5 +1,6 @@
 #include <network/Driver.h>
 #include <network/Ether.h>
+#include <network/EtherController.h>
 
 #include <cstring>
 #include <cstdint>
@@ -27,6 +28,7 @@ Driver::Driver() {
     }
 
     ether_controller = new EtherController();
+    ether_controller->driver = this;
 }
 
 
@@ -40,20 +42,28 @@ void Driver::driver_open() {
 }
 
 
+// 初始化
+void Driver::driver_init() {
+    ether_controller->ethernet_init();
+}
+
+
 void Driver::driver_send(Packet* packet) {
     // pcap
     pcap_device_send(pcap, packet->get_data(), packet->get_size());
 }
 
 
+ // 从 npcap 驱动程序中读取数据包，
+ // 数据从数组第 0 个字节开始正序存放
+ // 
+ // 返回：标准的 Packet* 类返回值
 Packet* Driver::driver_read() {
     uint16_t size;
     Packet* packet = new Packet(XNET_CFG_PACKET_MAX_SIZE);
     // packet->alloc_packet(XNET_CFG_PACKET_MAX_SIZE);
     size = pcap_device_read(pcap, packet->get_data(), XNET_CFG_PACKET_MAX_SIZE);
     if (size) {
-        // printf(".");
-        // printf("packet data ptr position: %d\n", packet->get_data() - packet->debug_get_payload_ptr());
         packet->set_size(size);
         return packet;
     }
@@ -64,8 +74,11 @@ Packet* Driver::driver_read() {
 
 
 // 从驱动代码中查询是否接收到了 packet，
-// 有则接收，并转换为 Packet* 形式
-void Driver::ethernet_poll() {
+// 有则接收，并转换为 Ether* 形式
+// 然后传入 ether_controller 内，从 ether 控制器
+// 进行协议的向上分发。
+// ether_controller->ethernet_in(packet)
+void Driver::poll() {
     Packet* packet;
 
     packet = driver_read();
@@ -76,20 +89,3 @@ void Driver::ethernet_poll() {
         ether_controller->ethernet_in(ether_packet);
     }
 }
-
-
-
-
-// static void ethernet_in(Packet* packet) {
-//     printf("driver: ethernet in!\n");
-//     // if (packet->get_size() <= sizeo)
-//     Ether* ether_packet = new Ether((Ether*)packet);
-
-//     switch (ether_packet->get_protocol()) {
-//         case XNET_PROTOCOL_ARP:
-//             break;
-
-//         case XNET_PROTOCOL_IP:
-//             break;
-//     }
-// }

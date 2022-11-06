@@ -2,17 +2,18 @@
 #define __CONFIG_H__
 
 #include <cstdint>
+#include <string>
 
 
 // 2字节大小端转换
 #define swap_order16(v)   ((((v) & 0xff) << 8) | (((v) >> 8) & 0xff))
 
 
-// read packet
-#define PACKET_READ                     0x0
+// // read packet
+// #define PACKET_READ                     0x0
 
-// transmit packet
-#define PACKET_TRANSMIT                 0x1
+// // transmit packet
+// #define PACKET_TRANSMIT                 0x1
 
 // Ether 包最大字节数：1516
 #define XNET_CFG_PACKET_MAX_SIZE        1516
@@ -60,7 +61,7 @@ typedef union _xiaddr_t {
     uint32_t    addr;
 } xipaddr_t;
 
-
+// (aborted) arp 表格
 typedef struct _xarp_entry_t {
     xipaddr_t ip_addr;                       // ip 地址
     uint8_t   mac_addr[XNET_MAC_ADDR_SIZE];  // mac 地址
@@ -70,17 +71,22 @@ typedef struct _xarp_entry_t {
 } _xarp_entry_t;
 
 
-
-
 // 本地物理机器的 ip，使用该 ip 将数据包发出
 extern const char* src_ip;
-//
+// 本软件的虚拟 mac 地址，用于通信
 extern const char src_mac_addr[];
 // 本软件虚拟网卡的 ip，后续使用这个 ip 通信
 extern const xipaddr_t netif_ipaddr;
+// 本软件虚拟网卡的 mac，后续使用这个 mac 通信
+extern const uint8_t netif_mac[];
 // mac 广播地址
 extern const uint8_t ether_broadcast[];
 
 
+// 以 std::string 返回 mac 地址。格式: 00:00:00:00:00:00
+std::string str_mac_addr(uint8_t* mac_addr);
 
+
+// 以 std::string 返回 ip 地址。格式：255.255.255.255
+std::string str_ip_addr(uint8_t* ip_addr);
 #endif

@@ -1,13 +1,7 @@
 #include <network/Packet.h>
 #include <cstring>
 #include <cstdlib>
-
-
-// static Packet* alloc_for_read(uint16_t data_size) {
-//     Packet* rx_net_packet = new Packet(data_size);
-//     rx_net_packet->net_packet->data = rx_net_packet->net_packet->payload;
-
-// }
+#include <cstdio>
 
 
 Packet::Packet() {
@@ -29,23 +23,27 @@ Packet::Packet(uint16_t data_size) {
 // Overload 2
 Packet::Packet(uint16_t data_size, uint8_t flag) {
     net_packet = new xnet_packet_t(data_size);
-
-    if (flag == PACKET_READ) {
-        net_packet->data = net_packet->payload;
-        net_packet->size = data_size;
-    }
-    else if (flag == PACKET_TRANSMIT) {
-        net_packet->data = net_packet->payload + XNET_CFG_PACKET_MAX_SIZE - data_size;
-        net_packet->size = data_size;
-    }
     
     aborted = false;
     header_size = 0;
 }
 
+// Overload 3
+Packet::Packet(const Packet* packet) {
+    // init_constructor(packet, 0);
+}
+
 
 Packet::~Packet() {
     delete net_packet;
+}
+
+
+void Packet::init_constructor(const Packet* packet, uint16_t xhdr_size) {
+    net_packet = new xnet_packet_t(packet->net_packet);
+    aborted = packet->aborted;
+    set_header_size(xhdr_size);
+    spawn_header();
 }
 
 
@@ -80,7 +78,9 @@ uint16_t Packet::get_header_size() {
 }
 
 
-void Packet::recv_header() {  }
+void Packet::spawn_header() {
+    printf("Packet::recv_header() called\n");
+}
 
 
 void Packet::set_aborted(bool op) {

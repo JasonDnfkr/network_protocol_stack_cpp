@@ -21,9 +21,10 @@ public:
     // 接收 Ether* ether_packet
     void arp_in(ArpPacket* arp_packet);
 
-    // 发送 arp 包
-    // 参数：ip 地址
-    void arp_make_request(const xipaddr_t* ipaddr);
+    // 生成一个 arp 请求包 (request)
+    // 参数：发送方的 ip 地址
+    // 返回值：返回一个 ArpPacket* arp 报文
+    ArpPacket* arp_make_request(const xipaddr_t* ipaddr);
     
 };
 

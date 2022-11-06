@@ -3,6 +3,7 @@
 
 // #include <network/Config.h>
 #include <network/Packet.h>
+// #include <network/ArpPacket.h>
 
 #include <cstdint>
 
@@ -18,12 +19,13 @@ private:
 
 protected:
     // 提取 header 的数据结构及内容至 hdr 中
-    void recv_header();
+    virtual void spawn_header();
     
     
 public:
     Ether();
     Ether(const Ether* packet);
+    Ether(const Ether* arp_packet, const uint8_t* mac_addr, xnet_protocol_t protocol);
     ~Ether();
 
     uint16_t get_protocol();

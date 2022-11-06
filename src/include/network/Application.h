@@ -9,7 +9,7 @@ private:
     Driver* driver;
     std::string info;
 
-    void init();
+    void init_constructor();
     /* data */
 public:
     Application(/* args */);
