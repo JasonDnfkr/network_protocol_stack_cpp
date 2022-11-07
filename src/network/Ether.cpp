@@ -29,8 +29,8 @@ Ether::Ether(const Ether* ether_packet) {
 }
 
 
-// Constructor: 接收 arp 数据包，套上 xether 报头，并处理
-Ether::Ether(const Ether* arp_packet, const uint8_t* mac_addr, xnet_protocol_t protocol) {
+// Constructor: 接收数据包，套上 xether 报头，并处理
+Ether::Ether(const Ether* arp_packet, const uint8_t* dest_mac_addr, xnet_protocol_t protocol) {
     net_packet = new xnet_packet_t(arp_packet->net_packet);
     aborted = arp_packet->aborted;
 
@@ -38,7 +38,7 @@ Ether::Ether(const Ether* arp_packet, const uint8_t* mac_addr, xnet_protocol_t p
     add_header(header_size);
     spawn_header();
 
-    memcpy(hdr->dest_mac, mac_addr, XNET_MAC_ADDR_SIZE);
+    memcpy(hdr->dest_mac, dest_mac_addr, XNET_MAC_ADDR_SIZE);
     memcpy(hdr->src_mac, netif_mac, XNET_MAC_ADDR_SIZE);
     hdr->protocol = swap_order16(protocol);
 }
@@ -46,6 +46,14 @@ Ether::Ether(const Ether* arp_packet, const uint8_t* mac_addr, xnet_protocol_t p
 
 Ether::~Ether() {
 }
+
+
+void Ether::update_ether_header(const uint8_t* dest_mac, const uint8_t* src_mac, xnet_protocol_t protocol) {
+    memcpy(hdr->dest_mac, dest_mac, XNET_MAC_ADDR_SIZE);
+    memcpy(hdr->src_mac, src_mac, XNET_MAC_ADDR_SIZE);
+    hdr->protocol = swap_order16(protocol);
+}
+
 
 
 uint16_t Ether::get_protocol() {

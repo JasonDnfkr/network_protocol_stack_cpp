@@ -4,7 +4,6 @@
 #include <pcap_device.h>
 
 #include <network/Config.h>
-// #include <network/EtherController.h>
 #include <network/Packet.h>
 
 class EtherController;

@@ -73,12 +73,16 @@ typedef struct _xarp_entry_t {
 
 // 本地物理机器的 ip，使用该 ip 将数据包发出
 extern const char* src_ip;
+
 // 本软件的虚拟 mac 地址，用于通信
 extern const char src_mac_addr[];
+
 // 本软件虚拟网卡的 ip，后续使用这个 ip 通信
 extern const xipaddr_t netif_ipaddr;
+
 // 本软件虚拟网卡的 mac，后续使用这个 mac 通信
 extern const uint8_t netif_mac[];
+
 // mac 广播地址
 extern const uint8_t ether_broadcast[];
 
@@ -86,7 +90,12 @@ extern const uint8_t ether_broadcast[];
 // 以 std::string 返回 mac 地址。格式: 00:00:00:00:00:00
 std::string str_mac_addr(uint8_t* mac_addr);
 
-
 // 以 std::string 返回 ip 地址。格式：255.255.255.255
 std::string str_ip_addr(uint8_t* ip_addr);
+
+// ip 判断是否相等
+bool is_xipaddr_equal_buf(const xipaddr_t* addr1, uint8_t* addr2);
+
+
 #endif
+

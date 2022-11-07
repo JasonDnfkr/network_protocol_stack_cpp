@@ -105,3 +105,16 @@ uint16_t Packet::get_size() {
 void Packet::set_size(uint16_t size) {
     net_packet->size = size;
 }
+
+// ------ new add ------
+
+void Packet::reduce_size(uint16_t size) {
+    net_packet->data += size;
+    net_packet->size -= size;
+}
+
+
+void Packet::expand_size(uint16_t size) {
+    net_packet->data -= size;
+    net_packet->size += size;
+}

@@ -10,25 +10,13 @@
 Driver::Driver() {
     ip_str = src_ip;
     my_mac_addr = src_mac_addr;
-    // memcpy(ip_str, src_ip, sizeof(src_ip));
+
+    str_ip_addr((uint8_t*)ip_str);
+    str_mac_addr((uint8_t*)my_mac_addr);
     
-    // my_mac_addr = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
-    // my_mac_addr = (char*)malloc(sizeof(uint8_t) * 6);
-    // my_mac_addr[0] = 0x11;
-    // my_mac_addr[1] = 0x22;
-    // my_mac_addr[2] = 0x33;
-    // my_mac_addr[3] = 0x44;
-    // my_mac_addr[4] = 0x55;
-    // my_mac_addr[5] = 0x66;
 
-    printf("%s\n", ip_str);
-
-    for (int i = 0; i < 6; i++) {
-        printf("%x ", my_mac_addr[i]);
-    }
-
-    ether_controller = new EtherController();
-    ether_controller->driver = this;
+    ether_controller = new EtherController(this);
+    // ether_controller->driver = this;
 }
 
 

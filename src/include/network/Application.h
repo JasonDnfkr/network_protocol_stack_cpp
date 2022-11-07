@@ -2,7 +2,7 @@
 #define __APPLICATION_H__
 
 #include <network/Driver.h>
-#include <string>
+
 
 class Application {
 private:

@@ -3,8 +3,6 @@
 
 #include <network/Config.h>
 
-#include <cstdint>
-
 /**
  * @brief 用于从 pcap 驱动里收发网卡接收到的 Ether 数据包
  * 
@@ -65,6 +63,12 @@ public:
 
     // 缩减数据包的大小：将 header 的字节数移除出数据包
     void remove_header();
+
+    // 缩减数据包大小
+    void reduce_size(uint16_t size);
+
+    // 扩增数据包大小
+    void expand_size(uint16_t header_size);
 
     // 扩增数据包的大小：将 header 的字节数添加进数据包
     void add_header(uint16_t header_size);
