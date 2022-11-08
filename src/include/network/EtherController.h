@@ -27,13 +27,14 @@ public:
     // 协议栈软件初始化
     void ethernet_init();
 
+    // EtherController 轮询
+    void ethernet_poll(Ether* packet);
+
     // 接收最底层的 Packet* 数据包
     void ethernet_in(Ether* ether_packet);
 
     // 发送数据包
     void ethernet_out_to(Ether* ether_packet);
-
-    // 发送
 };
 
 

@@ -41,10 +41,14 @@ public:
     ArpPacket(const ArpPacket* ether_packet);
     ~ArpPacket();
 
-    // 构建一个 arp 请求报文。
-    // 参数：sender_ip
+    // 构建一个 arp announcement 报文
     // 包内构建，无返回值
     void spawn_announcement_packet();
+
+    // 构建一个 arp 请求报文 (request)
+    // 参数：请求的 ip 地址
+    // 包内构建，无返回值
+    void spawn_request_packet(const xipaddr_t* ipaddr);
 
     // 构建一个 arp 响应报文 (reply)
     // 参数：需要回应的 ARP 报文

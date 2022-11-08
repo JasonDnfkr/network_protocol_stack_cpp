@@ -65,15 +65,14 @@ Packet* Driver::driver_read() {
 // 有则接收，并转换为 Ether* 形式
 // 然后传入 ether_controller 内，从 ether 控制器
 // 进行协议的向上分发。
-// ether_controller->ethernet_in(packet)
 void Driver::poll() {
-    Packet* packet;
+    Packet* packet = nullptr;
 
     packet = driver_read();
-    if (packet) {
-        // ethernet_in(packet);
-        Ether* ether_packet = new Ether((Ether*)packet);
-        delete packet;
-        ether_controller->ethernet_in(ether_packet);
-    }
+    // if (packet) {
+    //     // ethernet_in(packet);
+    //     ether_controller->ethernet_poll((Ether*)packet);
+    // }
+    ether_controller->ethernet_poll((Ether*)packet);
+
 }

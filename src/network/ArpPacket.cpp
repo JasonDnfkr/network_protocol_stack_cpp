@@ -41,6 +41,21 @@ void ArpPacket::spawn_announcement_packet() {
 }
 
 
+// 构建一个 arp 请求报文 (request)
+// 参数：请求的 ip 地址
+// 包内构建，无返回值
+void ArpPacket::spawn_request_packet(const xipaddr_t* ipaddr) {
+    hdr->hardware_type   = swap_order16(XARP_HW_ETHER);
+    hdr->protocol_type   = swap_order16(XNET_PROTOCOL_IP);
+    hdr->hardware_length = XNET_MAC_ADDR_SIZE;
+    hdr->protocol_length = XNET_IPV4_ADDR_SIZE;
+    hdr->opcode          = swap_order16(XARP_REQUEST);
+    memcpy(hdr->sender_mac, netif_mac, XNET_MAC_ADDR_SIZE);
+    memcpy(hdr->sender_ip, netif_ipaddr.array, XNET_IPV4_ADDR_SIZE);
+    memset(hdr->target_mac, 0, XNET_MAC_ADDR_SIZE);
+    memcpy(hdr->target_ip, ipaddr->array, XNET_IPV4_ADDR_SIZE);
+}
+
 // 构建一个 arp 响应报文 (reply)
 // 参数：需要回应的 ARP 报文
 // 包内构建，无返回值

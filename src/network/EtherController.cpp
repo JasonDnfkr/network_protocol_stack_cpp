@@ -34,8 +34,22 @@ void EtherController::ethernet_init() {
 }
 
 
+// EtherController 轮询
+void EtherController::ethernet_poll(Ether* packet) {
+    // 屎山代码，驱动传来的数据包
+    // 还没有写一个可以在类内让 hdr 自动指向数据的函数，
+    // 所以只能借助构造函数来暂时实现
+    if (packet) {
+        Ether* ether_packet = new Ether(packet);
+        delete packet;
+        ethernet_in(ether_packet);
+    }
+    arp_controller->arp_entries_poll();
+}
+
+
 void EtherController::ethernet_in(Ether* ether_packet) {
-    printf("EtherController: Packet* received.\n");
+    printf("[EtherController] Packet* received.\n");
     
     uint16_t protocol = ether_packet->get_protocol();
     ether_packet->remove_header();
