@@ -3,6 +3,10 @@
 
 #include <cstdio>
 
+void ArpController::constructor_init() {
+    arp_table = new ArpTable();
+}
+
 ArpController::ArpController() {
 }
 

@@ -85,8 +85,7 @@
 				9,
 				10,
 				11,
-				12,
-				13
+				12
 			]
 		}
 	],
@@ -150,8 +149,7 @@
 				9,
 				10,
 				11,
-				12,
-				13
+				12
 			]
 		}
 	],
@@ -191,12 +189,6 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/network/ArpController.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/network/ArpEntry.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

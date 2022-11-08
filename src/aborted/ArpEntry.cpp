@@ -9,5 +9,6 @@ ArpEntry::ArpEntry() {
     retry_cnt = 0;
 }
 
+
 ArpEntry::~ArpEntry() {
 }

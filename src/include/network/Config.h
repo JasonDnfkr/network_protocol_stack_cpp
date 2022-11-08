@@ -25,7 +25,8 @@
 #define XNET_IPV4_ADDR_SIZE             4
 
 
-// typedef struct _xnet_packet_t xnet_packet_t;
+// 时间类型，返回当前系统跑了多少个 100ms
+typedef uint32_t xnet_time_t;
 
 
 // 最底层的以太网数据包结构

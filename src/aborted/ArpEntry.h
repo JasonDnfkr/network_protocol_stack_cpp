@@ -3,7 +3,6 @@
 
 #include <network/Config.h>
 
-#define XARP_ENTRY_FREE         0
 
 /*
 
@@ -28,6 +27,8 @@ private:
 public:
     ArpEntry();
     ~ArpEntry();
+
+    void update(const uint8_t* ipaddr);
 };
 
 

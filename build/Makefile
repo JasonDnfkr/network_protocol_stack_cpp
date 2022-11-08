@@ -292,30 +292,6 @@ src/network/ArpController.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/network/ArpController.cpp.s
 .PHONY : src/network/ArpController.cpp.s
 
-src/network/ArpEntry.obj: src/network/ArpEntry.cpp.obj
-.PHONY : src/network/ArpEntry.obj
-
-# target to build an object file
-src/network/ArpEntry.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/network/ArpEntry.cpp.obj
-.PHONY : src/network/ArpEntry.cpp.obj
-
-src/network/ArpEntry.i: src/network/ArpEntry.cpp.i
-.PHONY : src/network/ArpEntry.i
-
-# target to preprocess a source file
-src/network/ArpEntry.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/network/ArpEntry.cpp.i
-.PHONY : src/network/ArpEntry.cpp.i
-
-src/network/ArpEntry.s: src/network/ArpEntry.cpp.s
-.PHONY : src/network/ArpEntry.s
-
-# target to generate assembly for a file
-src/network/ArpEntry.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\network_protocol_stack_cpp.dir\build.make CMakeFiles/network_protocol_stack_cpp.dir/src/network/ArpEntry.cpp.s
-.PHONY : src/network/ArpEntry.cpp.s
-
 src/network/ArpPacket.obj: src/network/ArpPacket.cpp.obj
 .PHONY : src/network/ArpPacket.obj
 
@@ -513,9 +489,6 @@ help:
 	@echo ... src/network/ArpController.obj
 	@echo ... src/network/ArpController.i
 	@echo ... src/network/ArpController.s
-	@echo ... src/network/ArpEntry.obj
-	@echo ... src/network/ArpEntry.i
-	@echo ... src/network/ArpEntry.s
 	@echo ... src/network/ArpPacket.obj
 	@echo ... src/network/ArpPacket.i
 	@echo ... src/network/ArpPacket.s

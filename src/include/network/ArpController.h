@@ -2,8 +2,26 @@
 #define __ARPCONTROLLER_H__
 
 #include <network/ArpPacket.h>
-#include <network/ArpEntry.h>
 #include <network/ArpTable.h>
+
+// ARP 表项空闲
+#define XARP_ENTRY_FREE         0
+
+// ARP 表解析成功
+#define XARP_ENTRY_OK           1
+
+// ARP 表正在解析
+#define XARP_ENTRY_RESOLVING    2
+
+// ARP 表扫描周期
+#define XARP_TIMER_PERIOD       1   // 单位：秒
+
+// ARP 表项超时时间
+#define XARP_CFG_ENTRY_TMO      5
+
+// ARP表挂起时重试查询次数
+#define XARP_CFG_MAX_RETRIES    4                   
+
 
 class EtherController;
 
@@ -12,12 +30,13 @@ private:
     EtherController* ether_controller;
     ArpTable* arp_table;
 
-    ArpPacket* arp_out();
+    void constructor_init();
 
 
 public:
     ArpController();
     ArpController(EtherController* ether_controller);
+    
     ~ArpController();
 
     // 接收 Ether* ether_packet
