@@ -36,7 +36,7 @@ ArpController::xarp_entry_t::xarp_entry_t() {
 }
 
 
-ArpController::xarp_entry_t::xarp_entry_t(uint8_t* src_ip, uint8_t* mac_addr) {
+ArpController::xarp_entry_t::xarp_entry_t(uint8_t* src_ip, uint8_t* src_mac_addr) {
     memcpy(&ip_addr.array, src_ip, XNET_IPV4_ADDR_SIZE);
     memcpy(mac_addr, src_mac_addr, XNET_MAC_ADDR_SIZE);
     state     = XARP_ENTRY_OK;
@@ -48,7 +48,7 @@ ArpController::xarp_entry_t::xarp_entry_t(uint8_t* src_ip, uint8_t* mac_addr) {
 // 更新 ARP 表
 void ArpController::arp_entries_update(ArpPacket* arp_packet) {
     uint8_t* sender_ip = arp_packet->get_sender_ip();
-    uint8_t* sender_mac = arp_packet->get_sender_ip();
+    uint8_t* sender_mac = arp_packet->get_sender_mac();
 
     
     if (arp_entries.size() == 0) {
@@ -162,8 +162,10 @@ void ArpController::arp_entries_poll() {
                     arp_entries[i]->tmo--;
                     if (arp_entries[i]->tmo == 0) {
                         ArpPacket* arp_request_packet = arp_make_request(&arp_entries[i]->ip_addr);
-                        arp_out(arp_request_packet, ether_broadcast);
-                        printf("[ArpController] arp_entries[%d], ip %s, sent out a boardcast arp for resolving.\n", i, str_ip_addr(arp_entries[i]->ip_addr.array).c_str());
+                        arp_out(arp_request_packet, arp_entries[i]->mac_addr);
+                        printf("[ArpController] arp_entries[%d], ip %s, sent out a boardcast arp for resolving to mac: %s.\n",
+                         i, str_ip_addr(arp_entries[i]->ip_addr.array).c_str(),
+                         str_mac_addr(arp_entries[i]->mac_addr).c_str());
                         arp_entries[i]->state = XARP_ENTRY_RESOLVING;
                         arp_entries[i]->tmo = XARP_CFG_ENTRY_PENDING_TMO;
                     }
@@ -181,8 +183,10 @@ void ArpController::arp_entries_poll() {
                         else {
                             ArpPacket* arp_request_packet = arp_make_request(&arp_entries[i]->ip_addr);
                             arp_out(arp_request_packet, ether_broadcast);                        
-                            printf("[ArpController] arp_entries[%d], ip %s, sent out a boardcast arp for resolving.\n", i, str_ip_addr(arp_entries[i]->ip_addr.array).c_str());
-                            arp_entries[i]->state = XARP_ENTRY_RESOLVING;
+                            printf("[ArpController] arp_entries[%d], ip %s, sent out a boardcast arp for resolving to mac: %s.\n",
+                            i, str_ip_addr(arp_entries[i]->ip_addr.array).c_str(),
+                            str_mac_addr(arp_entries[i]->mac_addr).c_str());                            
+                         arp_entries[i]->state = XARP_ENTRY_RESOLVING;
                             arp_entries[i]->tmo = XARP_CFG_ENTRY_PENDING_TMO;
                         }
                     }

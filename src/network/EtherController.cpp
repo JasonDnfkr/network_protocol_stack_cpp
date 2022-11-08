@@ -28,7 +28,7 @@ EtherController::~EtherController() { }
 // 自动发送一个 42 ARP Announcement 无回报报文
 void EtherController::ethernet_init() {
     ArpPacket* arp_packet = arp_controller->arp_make_announcement();
-    arp_packet->print();
+    // arp_packet->print();
     Ether* ether_packet = new Ether(arp_packet, ether_broadcast, XNET_PROTOCOL_ARP);
     ethernet_out_to(ether_packet);
 }

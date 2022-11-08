@@ -23,7 +23,16 @@
 #define XARP_CFG_ENTRY_PENDING_TMO 4         
 
 // ARP表挂起时重试查询次数
-#define XARP_CFG_MAX_RETRIES       4                   
+#define XARP_CFG_MAX_RETRIES       4               
+
+
+/**
+ * 有些内容需要重新调整：
+ * arp announcement：src_ip 和 dest_ip 相同，src_mac 是本机 mac，dest_mac 是 0。Ethernet 报文的 mac 是广播地址
+ * 并不是每一个 arp 报文，最后都要在以太网层发送广播地址
+ * 比如超时重传，就可以点对点地确认信息，如果没有回应则再发送广播地址
+ * 
+ */
 
 
 class EtherController;
