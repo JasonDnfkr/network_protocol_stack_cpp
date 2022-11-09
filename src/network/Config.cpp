@@ -47,11 +47,13 @@ std::string str_mac_addr(uint8_t* mac_addr) {
     return tmp;
 }
 
+
 std::string str_ip_addr(uint8_t* ip_addr) {
     char tmp[16];
     sprintf(tmp, "%d.%d.%d.%d", ip_addr[0], ip_addr[1], ip_addr[2], ip_addr[3]);
     return tmp;
 }
+
 
 bool is_xipaddr_equal_buf(const xipaddr_t* addr1, uint8_t* addr2) {
     return (memcmp(addr1->array, addr2, XNET_IPV4_ADDR_SIZE) == 0);

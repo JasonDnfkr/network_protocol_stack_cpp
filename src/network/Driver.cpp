@@ -16,7 +16,6 @@ Driver::Driver() {
     
 
     ether_controller = new EtherController(this);
-    // ether_controller->driver = this;
 }
 
 
@@ -49,7 +48,7 @@ void Driver::driver_send(Packet* packet) {
 Packet* Driver::driver_read() {
     uint16_t size;
     Packet* packet = new Packet(XNET_CFG_PACKET_MAX_SIZE);
-    // packet->alloc_packet(XNET_CFG_PACKET_MAX_SIZE);
+
     size = pcap_device_read(pcap, packet->get_data(), XNET_CFG_PACKET_MAX_SIZE);
     if (size) {
         packet->set_size(size);

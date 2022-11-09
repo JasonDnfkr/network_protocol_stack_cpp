@@ -115,12 +115,12 @@ ArpPacket* ArpController::arp_make_request(const xipaddr_t* ipaddr) {
 
 
 void ArpController::arp_in(ArpPacket* arp_packet) {
-    printf("[ArpController] Received an arp_packet, sender ip: %s, sender mac: %s\n", str_ip_addr(arp_packet->get_sender_ip()).c_str(), str_mac_addr(arp_packet->get_sender_mac()).c_str());
+    debug_low("[ArpController] Received an arp_packet, sender ip: %s, sender mac: %s\n", str_ip_addr(arp_packet->get_sender_ip()).c_str(), str_mac_addr(arp_packet->get_sender_mac()).c_str());
     // arp_packet.
     uint16_t opcode = arp_packet->get_opcode();
     switch (opcode) {
         case XARP_REQUEST: {
-            printf("[ArpController] Analyzing an arp request packet..\n");
+            debug_low("[ArpController] Analyzing an arp request packet..\n");
             ArpPacket* response_arp_packet = arp_make_response(arp_packet);
             arp_entries_update(arp_packet);
             arp_out(response_arp_packet, ether_broadcast);
@@ -158,12 +158,12 @@ void ArpController::arp_entries_poll() {
         if (arp_entries[i]->check_tmo(XARP_TIMER_PERIOD)) {
             switch (arp_entries[i]->state) {
                 case XARP_ENTRY_OK: {
-                    printf("[ArpController] arp_entries[%d], ip: %s, timeout: %d\n", i, str_ip_addr(arp_entries[i]->ip_addr.array).c_str(), arp_entries[i]->tmo);
+                    debug_low("[ArpController] arp_entries[%d], ip: %s, timeout: %d\n", i, str_ip_addr(arp_entries[i]->ip_addr.array).c_str(), arp_entries[i]->tmo);
                     arp_entries[i]->tmo--;
                     if (arp_entries[i]->tmo == 0) {
                         ArpPacket* arp_request_packet = arp_make_request(&arp_entries[i]->ip_addr);
                         arp_out(arp_request_packet, arp_entries[i]->mac_addr);
-                        printf("[ArpController] arp_entries[%d], ip %s, sent out a boardcast arp for resolving to mac: %s.\n",
+                        debug_low("[ArpController] arp_entries[%d], ip %s, sent out a boardcast arp for resolving to mac: %s.\n",
                          i, str_ip_addr(arp_entries[i]->ip_addr.array).c_str(),
                          str_mac_addr(arp_entries[i]->mac_addr).c_str());
                         arp_entries[i]->state = XARP_ENTRY_RESOLVING;
@@ -175,7 +175,7 @@ void ArpController::arp_entries_poll() {
                     arp_entries[i]->tmo--;
                     if (arp_entries[i]->tmo == 0) {
                         arp_entries[i]->retry_cnt--;
-                        printf("[ArpController] arp_entries[%d], ip: %s, retry_cnt: %d\n", i, str_ip_addr(arp_entries[i]->ip_addr.array).c_str(), arp_entries[i]->retry_cnt);
+                        debug_low("[ArpController] arp_entries[%d], ip: %s, retry_cnt: %d\n", i, str_ip_addr(arp_entries[i]->ip_addr.array).c_str(), arp_entries[i]->retry_cnt);
                         if (arp_entries[i]->retry_cnt == 0) {
                             arp_entries[i]->state = XARP_ENTRY_FREE;
                             need_erase.push_back(i);
@@ -201,7 +201,7 @@ void ArpController::arp_entries_poll() {
     }
 
     for (int i : need_erase) {
-        printf("[ArpController] arp_entries[%d] free.\n", i);
+        debug_low("[ArpController] arp_entries[%d] free.\n", i);
         arp_entries.erase(arp_entries.begin() + i);
     }
 }

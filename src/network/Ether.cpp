@@ -21,11 +21,6 @@ Ether::Ether() {
 // Constructor: 接收数据包
 Ether::Ether(const Ether* ether_packet) {
     init_constructor(ether_packet, sizeof(xether_hdr_t));
-    // net_packet = new xnet_packet_t(ether_packet->net_packet);
-    // aborted = ether_packet->aborted;
-    
-    // set_header_size(sizeof(xether_hdr_t));
-    // recv_header();
 }
 
 

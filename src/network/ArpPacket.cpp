@@ -94,6 +94,7 @@ void ArpPacket::check() {
 
 // 输出 ARP 报头信息
 void ArpPacket::print() {
+#ifndef __CLOSE__PRINT__
     printf("==========================================\n");
     printf("Address Resolution Protocol (%s)\n", swap_order16(hdr->opcode) == XARP_REQUEST ? "request" : "reply");
     printf("Hardware type: %s (%d)\n", swap_order16(hdr->hardware_type) == XARP_HW_ETHER ? "Ethernet" : "Other", swap_order16(hdr->hardware_type));
@@ -106,6 +107,7 @@ void ArpPacket::print() {
     printf("Target MAC address: %s\n", str_mac_addr(hdr->target_mac).c_str());
     printf("Target IP Address: %s\n", str_ip_addr(hdr->target_ip).c_str());
     printf("==========================================\n");
+#endif
 }
 
 

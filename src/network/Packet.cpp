@@ -79,7 +79,7 @@ uint16_t Packet::get_header_size() {
 
 
 void Packet::spawn_header() {
-    printf("Packet::recv_header() called\n");
+    debug_low("Packet::recv_header() called\n");
 }
 
 

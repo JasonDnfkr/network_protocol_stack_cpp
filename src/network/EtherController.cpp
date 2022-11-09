@@ -3,6 +3,7 @@
 #include <pcap_device.h>
 #include <network/Driver.h>
 #include <network/ArpController.h>
+#include <network/Config.h>
 
 #include <cstdio>
 
@@ -49,19 +50,19 @@ void EtherController::ethernet_poll(Ether* packet) {
 
 
 void EtherController::ethernet_in(Ether* ether_packet) {
-    printf("[EtherController] Packet* received.\n");
+    debug_low("[EtherController] Packet* received.\n");
     
     uint16_t protocol = ether_packet->get_protocol();
     ether_packet->remove_header();
 
     switch (protocol) {
         case XNET_PROTOCOL_ARP: {
-            printf("EtherController: switch to case XNET_PROTOCOL_ARP\n");
+            debug_low("EtherController: switch to case XNET_PROTOCOL_ARP\n");
             ArpPacket* arp_packet = new ArpPacket((ArpPacket*)ether_packet);
             // arp_packet->check();
             delete ether_packet;
             if (arp_packet->is_aborted()) {
-                printf("EtherController: ARP packet aborted.\n");
+                debug_low("EtherController: ARP packet aborted.\n");
                 delete arp_packet;
                 break;
             }

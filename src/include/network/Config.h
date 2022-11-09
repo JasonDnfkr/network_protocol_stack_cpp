@@ -98,5 +98,39 @@ std::string str_ip_addr(uint8_t* ip_addr);
 bool is_xipaddr_equal_buf(const xipaddr_t* addr1, uint8_t* addr2);
 
 
+__mingw_ovr
+__attribute__((__format__ (gnu_printf, 1, 2))) __MINGW_ATTRIB_NONNULL(1)
+int debug_low(const char *__format, ...) {
+    int __retval;
+    __builtin_va_list __local_argv; __builtin_va_start( __local_argv, __format );
+    __retval = __mingw_vfprintf( stdout, __format, __local_argv );
+    __builtin_va_end( __local_argv );
+    return __retval;
+}
+
+
+__mingw_ovr
+__attribute__((__format__ (gnu_printf, 1, 2))) __MINGW_ATTRIB_NONNULL(1)
+int debug_medium(const char *__format, ...) {
+    int __retval;
+    __builtin_va_list __local_argv; __builtin_va_start( __local_argv, __format );
+    __retval = __mingw_vfprintf( stdout, __format, __local_argv );
+    __builtin_va_end( __local_argv );
+    return __retval;
+}
+
+
+
+__mingw_ovr
+__attribute__((__format__ (gnu_printf, 1, 2))) __MINGW_ATTRIB_NONNULL(1)
+int debug_high(const char *__format, ...) {
+    int __retval;
+    __builtin_va_list __local_argv; __builtin_va_start( __local_argv, __format );
+    __retval = __mingw_vfprintf( stdout, __format, __local_argv );
+    __builtin_va_end( __local_argv );
+    return __retval;
+}
+
+
 #endif
 
